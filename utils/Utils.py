@@ -140,8 +140,13 @@ class Tools(object):
 
 
   # TODO: Definir o método aqui
-  def _create_text_file(self, vlr_str, path, filename):
-    output_dir = os.path.join(os.getcwd(), path, filename) + '.txt'
+  def _create_text_file(self, str_truncada, path, filename):
+    diretorio = os.path.join(os.getcwd(), path, filename) + '.txt'
 
-    with open(output_dir, 'w+') as out_arq:
-      out_arq.write(xml_str)
+    if not os.path.exists(diretorio):
+      with open(diretorio, 'w+') as out_arq:
+        out_arq.write(str_truncada)
+    else:
+      str_truncada = '\n' + str_truncada
+      with open(diretorio, 'a+') as out_arq:
+        out_arq.write(str_truncada)
