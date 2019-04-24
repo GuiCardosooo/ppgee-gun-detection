@@ -1,0 +1,5 @@
+# Ignora o dataset
+WeaponS/
+WeaponS_bbox/
+.vscode/
+utils/__pycache__/
