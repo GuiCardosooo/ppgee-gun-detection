@@ -1,3 +1,3 @@
 # Detecção de Armas
 
-Implementação do Faster-RCNN.
+Detecção de armas utilizando redes neurais convolucionais
