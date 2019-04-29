@@ -1,5 +1,6 @@
 # Ignora o dataset
-WeaponS/
-WeaponS_bbox/
 .vscode/
-utils/__pycache__/
+data/
+bbox/
+__MACOSX/
+tools/__pycache__/
