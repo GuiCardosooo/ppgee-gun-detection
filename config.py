@@ -5,3 +5,10 @@ paths = {
     'lb_data': 'data',
     'lb_bbox': 'bbox'
 }
+
+# Parameters
+param = {
+    'train': 80,
+    'valid': 20,
+    'test': 0
+}

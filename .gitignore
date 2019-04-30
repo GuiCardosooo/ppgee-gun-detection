@@ -1,6 +1,11 @@
-# Ignora o dataset
-.vscode/
+# Dataset's name
 data/
 bbox/
+WeaponS/
+WeaponS_bbox/
+
+# Trash
+.vscode/
 __MACOSX/
 tools/__pycache__/
+__pycache__/

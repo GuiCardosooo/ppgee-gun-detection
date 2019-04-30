@@ -16,7 +16,7 @@ import warnings
 import xml.etree.ElementTree as ET
 from glob import glob
 
-# TODO: Definir a classe aqui
+# TODO: Definir a classe aqui   
 class Tools(object):
     '''Funções essenciais no pré processamento dos dados do YOLOv2'''
 
@@ -49,34 +49,34 @@ class Tools(object):
         self._len_data = value
 
 
-    # TODO: Definir o método aqui
-    def get_url_zip(self, url, new_dir):
-        '''Função responsável por baixar um arquivo .zip de uma url'''
+    # # TODO: Definir o método aqui
+    # def get_url_zip(self, url, new_dir):
+    #     '''Função responsável por baixar um arquivo .zip de uma url'''
 
-        # Verifica se o diretório existe
-        new_path = os.path.join(self.base_path, new_dir)
-        if os.path.exists(new_path):
-            self.len_data = self._get_len_dir(new_dir)
-            warnings.warn('Este diretório já existe!')
-            return False
+    #     # Verifica se o diretório existe
+    #     new_path = os.path.join(self.base_path, new_dir)
+    #     if os.path.exists(new_path):
+    #         self.len_data = self._get_len_dir(new_dir)
+    #         warnings.warn('Este diretório já existe!')
+    #         return False
 
-        try:
-            print('Downloading zip file:\n >', url)
-            r = requests.get(url)
-            z = zipfile.ZipFile(io.BytesIO(r.content))
-            # Extrai o 'filename' da primeira ocorrência do método infolist()
-            old_dir = z.infolist()[0].filename
+    #     try:
+    #         print('Downloading zip file:\n >', url)
+    #         r = requests.get(url)
+    #         z = zipfile.ZipFile(io.BytesIO(r.content))
+    #         # Extrai o 'filename' da primeira ocorrência do método infolist()
+    #         old_dir = z.infolist()[0].filename
 
-            z.extractall()                      # Extrai os arquivos no 'base_path'
-            # Renomeia o diretório antigo (retirando o '\')
-            os.rename(old_dir[:-1], new_dir)
-            self.len_data = self._get_len_dir(new_dir)
-            print('\nDone!')
-            return True
+    #         z.extractall()                      # Extrai os arquivos no 'base_path'
+    #         # Renomeia o diretório antigo (retirando o '\')
+    #         os.rename(old_dir[:-1], new_dir)
+    #         self.len_data = self._get_len_dir(new_dir)
+    #         print('\nDone!')
+    #         return True
 
-        except:
-            print('Oops!', sys.exc_info()[0], 'occured.')
-            return False
+    #     except:
+    #         print('Oops!', sys.exc_info()[0], 'occured.')
+    #         return False
 
 
     # TODO: Definir o método aqui
