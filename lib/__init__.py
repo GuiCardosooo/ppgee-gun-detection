@@ -1,1 +1,1 @@
-__all__ = ['get_data']
+__all__ = ['get_data', 'mod_data']

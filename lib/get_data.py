@@ -2,10 +2,16 @@
 # UFES - Universidade Federal do Espiríto Santo
 # Gun Detection
 # Written by Guilherme Cardoso
+
+
 """
 Full documentation is at:
 <https://github.com/GuiCardosooo/ppgee-gun-detection>.
 """
+
+
+__all__ = ['get_url_zip']
+__author__ = ('Guilherme Vinícius Simões Cardoso <cardoso.guivi@gmail.com>')
 
 
 import io
@@ -16,12 +22,8 @@ import zipfile
 import warnings
 
 
-__all__ = ['get_url_zip']
-__author__ = ('Guilherme Vinícius Simões Cardoso <cardoso.guivi@gmail.com>')
-
-
 # TODO: Definir a classe aqui
-class _CreatePaths:
+class _Paths:
     ''''''
     # Constructor
     def __init__(self, base_path=None):
@@ -80,10 +82,13 @@ def _delete_spaces(new_dir):
 
 
 # Faz a download do dataset
-def get_url_zip(url, new_dir):
+def get_url_zip(args):
     '''Função responsável por baixar um arquivo .zip de uma url'''
+    obj = _Paths()
 
-    obj = _CreatePaths()
+    url = args[0]
+    new_dir = args[1]
+
     if os.path.exists(os.path.join(obj.base_path, new_dir)):
         obj.len_data = _get_len_dir(new_dir)
         warnings.warn('Este diretório já existe!')

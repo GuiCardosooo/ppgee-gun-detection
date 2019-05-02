@@ -3,6 +3,7 @@ data/
 bbox/
 WeaponS/
 WeaponS_bbox/
+db/
 
 # Trash
 .vscode/
